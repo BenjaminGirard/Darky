@@ -6,8 +6,16 @@ public class TilesGeneration : MonoBehaviour {
 
     public GameObject []tiles;
 
-    private float nextPosition;
+    public GameObject followingCamera;
+
+    public GameObject BackGroundObject;
+
+    private float nextPositionBackGround;
+
+    private float nextPositionTile;
     private float gap;
+
+    private GameObject lastGenerated;
 
     GameObject nextObject(GameObject lastObject)
     {
@@ -22,20 +30,22 @@ public class TilesGeneration : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        nextPosition = -10;
+        nextPositionBackGround = (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x;
+        nextPositionTile = -10;
         gap = 0;
 
-        GameObject lastGenerated = null;
+        lastGenerated = null;
         GameObject toGenerate = null;
 
         for (var i = 0; i < 50; i++)
         {
             toGenerate = nextObject(lastGenerated);
 
-            Instantiate(toGenerate, new Vector3(nextPosition - toGenerate.transform.position.z, toGenerate.transform.position.y,
+            Instantiate(toGenerate, new Vector3(nextPositionTile - toGenerate.transform.position.z, toGenerate.transform.position.y,
                                                toGenerate.transform.position.z), Quaternion.identity);
-            print((float)(toGenerate.GetComponent<SpriteRenderer>().bounds.size.x));
-            nextPosition += (float)toGenerate.GetComponent<SpriteRenderer>().bounds.size.x + gap;
+            nextPositionTile += (float)toGenerate.GetComponent<SpriteRenderer>().bounds.size.x + gap;
+
+
 
             lastGenerated = toGenerate;
         }
@@ -43,6 +53,25 @@ public class TilesGeneration : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        var camera = followingCamera.GetComponent<Camera>();
+        Vector3 p = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane));
+
+        if (p.x > nextPositionBackGround - (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x) {
+            Instantiate(BackGroundObject, new Vector3(nextPositionBackGround, BackGroundObject.transform.position.y,
+                                                      BackGroundObject.transform.position.z), Quaternion.identity);
+            nextPositionBackGround += (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x;
+        }
+
+        GameObject toGenerate = nextObject(lastGenerated);
+
+        if (p.x > nextPositionTile - (toGenerate.GetComponent<SpriteRenderer>().bounds.size.x + gap)) {
+
+            Instantiate(toGenerate, new Vector3(nextPositionTile - toGenerate.transform.position.z, toGenerate.transform.position.y,
+                                               toGenerate.transform.position.z), Quaternion.identity);
+            nextPositionTile += (float)toGenerate.GetComponent<SpriteRenderer>().bounds.size.x + gap;
+
+            lastGenerated = toGenerate;
+        }
+
+    }
 }

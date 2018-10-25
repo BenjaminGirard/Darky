@@ -51,7 +51,7 @@ public class PlayerMove : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.Translate(Vector2.up * 6f * Time.deltaTime);
+            transform.Translate(Vector2.up * 13f * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 0);
         }
     }
