@@ -14,13 +14,19 @@ public class PlayerMove : MonoBehaviour {
 	void Update () {
         float hori = Input.GetAxis("Horizontal");
 
-        movement();
+        movement(hori);
         anim.SetFloat("Hori", hori);
-        anim.SetBool("Att", Att);
+        //anim.SetBool("Att", Att);
     }
 
-    void movement()
+    void movement(float hori)
     {
+        if (hori < 0)
+        {
+            anim.SetBool("Right", false);
+        }
+        else if (hori > 0)
+            anim.SetBool("Right", true);
         /*
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -28,14 +34,15 @@ public class PlayerMove : MonoBehaviour {
             transform.eulerAngles = new Vector2(0, 0);
         }
         */
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(KeyCode.UpArrow)/* || Input.GetKeyDown(KeyCode.Z)*/)
         {
-            print("je rentre");
-            Att = true;
+            //Att = true;
+            anim.SetBool("Att", true);
         }
         else
         {
-            Att = false;
+            //Att = false;
+            anim.SetBool("Att", false);
         }
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
@@ -49,5 +56,7 @@ public class PlayerMove : MonoBehaviour {
             transform.eulerAngles = new Vector2(0, 0);
         }
     }
+
+
 
 }
