@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class SwordController : MonoBehaviour {
 
-    public GameObject _shadow;
-
+	// Use this for initialization
 	void Start () {
-		
-	}
+        
+
+    }
 	
+	// Update is called once per frame
 	void Update () {
 		
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("LightPotion"))
+        if (collision.CompareTag("Monster"))
         {
-            _shadow.GetComponent<ShadowController>()._lightS.healLight(new Vector3(1, 1, 1));
             Destroy(collision.gameObject);
         }
     }

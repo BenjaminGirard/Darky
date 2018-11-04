@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
 
     Animator anim;
+    public GameObject hitBox_att_right;
+    public GameObject hitBox_att_left;
     bool Att = false;
+    bool left = false;
 	void Start () {
         anim = GetComponent<Animator>();
 	}
@@ -23,10 +27,14 @@ public class PlayerMove : MonoBehaviour {
     {
         if (hori < 0)
         {
+            left = true;
             anim.SetBool("Right", false);
         }
         else if (hori > 0)
+        {
+            left = false;
             anim.SetBool("Right", true);
+        }
         /*
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -36,12 +44,15 @@ public class PlayerMove : MonoBehaviour {
         */
         if (Input.GetKey(KeyCode.UpArrow)/* || Input.GetKeyDown(KeyCode.Z)*/)
         {
-            //Att = true;
+            Att = true;
             anim.SetBool("Att", true);
+            StartCoroutine(activeHit(0.3f));
+            StartCoroutine(desactiveHit(0.5f));
+            //hitBox_att.SetActive(false);
         }
         else
         {
-            //Att = false;
+            Att = false;
             anim.SetBool("Att", false);
         }
 
@@ -57,6 +68,22 @@ public class PlayerMove : MonoBehaviour {
         }
     }
 
+    IEnumerator activeHit(float time)
+    {
+        yield return new WaitForSeconds(time);
 
+        if (left)
+            hitBox_att_left.SetActive(true);
+        else
+            hitBox_att_right.SetActive(true);
 
+    }
+
+    IEnumerator desactiveHit(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+            hitBox_att_left.SetActive(false);
+            hitBox_att_right.SetActive(false);
+    }
 }
