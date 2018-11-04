@@ -71,10 +71,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTiles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1614306550702550, guid: 301cb1e3b55a9458c89d01cd82d575e8, type: 2}
+  - {fileID: 1527961271887418, guid: c80322605962d41e09a9e46763cec670, type: 2}
+  - {fileID: 1165094728928198, guid: a3f5d5b1653a24a9ebd77d42fed40ca9, type: 2}
+  - {fileID: 1354549028943144, guid: 1cdddaa1c616347b7bc2d3164311163c, type: 2}
 --- !u!212 &212268305573199618
 SpriteRenderer:
   m_ObjectHideFlags: 1

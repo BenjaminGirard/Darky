@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTiles:
-  - {fileID: 0}
+  - {fileID: 1918552001167436, guid: 7a29d715621134ee6b62dbbc3d12ef6e, type: 2}
 --- !u!212 &212824165792210740
 SpriteRenderer:
   m_ObjectHideFlags: 1

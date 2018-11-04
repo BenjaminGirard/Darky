@@ -79,10 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTiles:
-  - {fileID: 0}
+  - {fileID: 1435869416582242, guid: 935195985531c4a1e8a85a02cb108421, type: 2}
   - {fileID: 1305504954581800}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1952638370904444, guid: 97a4d2a4a61e34c1aa2f5cfc4bb8d0e6, type: 2}
+  - {fileID: 1523409153357606, guid: 14df9fd44b3d24a9d886c6dae06bfb7b, type: 2}
 --- !u!212 &212886537106918100
 SpriteRenderer:
   m_ObjectHideFlags: 1
