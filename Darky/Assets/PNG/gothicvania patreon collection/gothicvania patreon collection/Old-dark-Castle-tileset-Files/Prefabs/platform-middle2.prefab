@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212886125301657800}
   - component: {fileID: 114042863185689518}
   - component: {fileID: 61816762260314974}
+  - component: {fileID: 50998710709729420}
+  - component: {fileID: 114583440897298508}
   m_Layer: 0
   m_Name: platform-middle2
   m_TagString: Untagged
@@ -42,6 +44,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50998710709729420
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165094728928198}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61816762260314974
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -82,8 +104,19 @@ MonoBehaviour:
   - {fileID: 1527961271887418, guid: c80322605962d41e09a9e46763cec670, type: 2}
   - {fileID: 1165094728928198}
   - {fileID: 1354549028943144, guid: 1cdddaa1c616347b7bc2d3164311163c, type: 2}
-  - {fileID: 1614306550702550, guid: 301cb1e3b55a9458c89d01cd82d575e8, type: 2}
-  - {fileID: 1360513071823376, guid: 161252e739ebd4e508d4e3953c423c30, type: 2}
+  - {fileID: 1029011865318472, guid: 02fd42f8cb3824742afb0660c0d58c95, type: 2}
+  - {fileID: 1405114669626326, guid: ee74c2ecae8b2436cb95140d6ed04b76, type: 2}
+--- !u!114 &114583440897298508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165094728928198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ef0ea9cbcd74ab2b27fb3105ad9b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212886125301657800
 SpriteRenderer:
   m_ObjectHideFlags: 1
