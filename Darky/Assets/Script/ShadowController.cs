@@ -11,9 +11,7 @@ public class ShadowController : MonoBehaviour {
 	}
 	
 	void Update () {
-        transform.localScale = _lightS.getLight();
-        if (transform.localScale.x > 0.535f)
-            transform.localScale -= new Vector3(0.01f, 0.01f, 0.01f);
-        _lightS.setLight(transform.localScale);
+        
+		transform.localScale = _lightS.damageLight(new Vector3(0.01f, 0.01f, 0.01f));
 	}
 }
