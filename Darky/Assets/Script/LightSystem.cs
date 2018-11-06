@@ -11,7 +11,7 @@ public class LightSystem {
     public LightSystem(Vector3 light)
     {
         MaxLightScale = light.x;
-        MinLightScale = 0.22f;
+        MinLightScale = 0.3f;
         _light = light;
     }
 
