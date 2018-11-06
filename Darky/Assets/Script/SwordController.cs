@@ -19,7 +19,7 @@ public class SwordController : MonoBehaviour {
     {
         if (collision.CompareTag("Monster"))
         {
-            Destroy(collision.gameObject);
+            collision.GetComponent<Die>().setDie();
         }
     }
 }
