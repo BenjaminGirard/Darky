@@ -23,19 +23,7 @@ public class NightmareMove : MonoBehaviour
 
 	void movement(float hori)
 	{
-
-		if (transform.position.x < player.transform.position.x)
-		{
-			transform.Translate(Vector2.right * 2f * Time.deltaTime);
+			transform.Translate(Vector2.left * 3f * Time.deltaTime);
 			transform.eulerAngles = new Vector2(0, 0);
-		}
-		else 
-		{
-			transform.Translate(Vector2.left * 2f * Time.deltaTime);
-			transform.eulerAngles = new Vector2(0, 0);
-		}
 	}
-
-
-
 }
