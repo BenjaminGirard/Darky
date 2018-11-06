@@ -29,6 +29,7 @@ public class HandleHighScore : MonoBehaviour {
 				data = check[i].Split(':');
 				if (data.Count() > 1) {
 					scoreMap.Add(data[0], int.Parse(data[1]));
+					print("je passe");
 				}
 			}
 		}
@@ -48,7 +49,7 @@ public class HandleHighScore : MonoBehaviour {
 		input.SetActive(false);
 		panel.SetActive(true);
 		//Read the highscore text document and give im to the right Text GameObject
-		string text = string.Join("\r\n", File.ReadAllLines(filename));
+		string text = string.Join("\r\n", File.ReadAllLines(filename)).Replace(':', '\t');
 		highScoreTextShowOnScreen.text = text;
 	}
 }
