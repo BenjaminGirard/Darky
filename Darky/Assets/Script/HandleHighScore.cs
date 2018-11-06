@@ -24,8 +24,8 @@ public class HandleHighScore : MonoBehaviour {
 		string[] check = scores.Split('\n');
 		//Get file on Map form for work
 		if (check.Count() > 0 && check[0] != ""){
-			string[] data;
 			for (int i = 0; i < check.Count(); ++i) {
+				string[] data;
 				data = check[i].Split(':');
 				if (data.Count() > 1) {
 					scoreMap.Add(data[0], int.Parse(data[1]));
@@ -39,16 +39,16 @@ public class HandleHighScore : MonoBehaviour {
 		//Construct String which contain all text file
 		string toWrite = "";
 		foreach (KeyValuePair<string, int> entry in tmp) {
-			toWrite += entry.Key + ":" + entry.Value.ToString() + '\n';
+			toWrite += entry.Key + ":" + entry.Value.ToString() + "\r\n";
 		}
 		//Dump string to file text
-		File.WriteAllText(filename, "");
 		File.WriteAllText(filename, toWrite);
 		//UI shutting down buttun and inputfield and activate panel showing elements
 		button.SetActive(false);
 		input.SetActive(false);
 		panel.SetActive(true);
 		//Read the highscore text document and give im to the right Text GameObject
-		highScoreTextShowOnScreen.text = string.Join("\n", File.ReadAllLines(filename));
+		string text = string.Join("\r\n", File.ReadAllLines(filename));
+		highScoreTextShowOnScreen.text = text;
 	}
 }
