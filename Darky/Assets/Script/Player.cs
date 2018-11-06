@@ -6,13 +6,6 @@ public class Player : MonoBehaviour {
 
     public GameObject _shadow;
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
