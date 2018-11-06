@@ -29,7 +29,6 @@ public class HandleHighScore : MonoBehaviour {
 				data = check[i].Split(':');
 				if (data.Count() > 1) {
 					scoreMap.Add(data[0], int.Parse(data[1]));
-					print("je passe");
 				}
 			}
 		}
