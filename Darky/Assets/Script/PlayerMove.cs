@@ -58,12 +58,12 @@ public class PlayerMove : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector2.right * 3f * Time.deltaTime);
+            transform.Translate(Vector2.right * 5f * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 0);
         }
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.Q))
         {
-            transform.Translate(Vector2.left * 3f * Time.deltaTime);
+            transform.Translate(Vector2.left * 5f * Time.deltaTime);
             transform.eulerAngles = new Vector2(0, 0);
         }
     }

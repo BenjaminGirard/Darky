@@ -5,9 +5,13 @@ using UnityEngine;
 public class LightSystem {
 
     private Vector3 _light;
+    private float MaxLightScale;
+    private float MinLightScale;
 
     public LightSystem(Vector3 light)
     {
+        MaxLightScale = light.x;
+        MinLightScale = 0.22f;
         _light = light;
     }
 
@@ -21,13 +25,21 @@ public class LightSystem {
         _light = l;
     }
 
-    public void damageLight(Vector3 dam)
+    public Vector3 damageLight(Vector3 dam)
     {
-        _light -= dam;
+        if (_light.x - dam.x < MinLightScale)
+            _light = new Vector3(MinLightScale, MinLightScale, MinLightScale);
+        else
+            _light -= dam;
+        return _light;
     }
 
-    public void healLight(Vector3 heal)
+    public Vector3 healLight(Vector3 heal)
     {
-        _light += heal;
+        if (_light.x + heal.x > MaxLightScale)
+            _light = new Vector3(MaxLightScale, MaxLightScale, MaxLightScale);
+        else
+            _light += heal;
+        return _light;
     }
 }
