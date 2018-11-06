@@ -9,9 +9,7 @@ namespace Script
 			if (!other.gameObject.CompareTag("Player"))
 				return;				
 			var rigBody = other.GetComponent<Rigidbody2D>();
-			var animator = other.GetComponent<Animator>();
 
-			animator.applyRootMotion = true;
 			rigBody.gravityScale = 0;
 		}
 
@@ -22,9 +20,7 @@ namespace Script
 				return;
 			
 			var rigBody = other.GetComponent<Rigidbody2D>();
-			var animator = other.GetComponent<Animator>();
 
-			animator.applyRootMotion = false;
 			rigBody.gravityScale = 1;
 		}
 	}

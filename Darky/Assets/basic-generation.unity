@@ -131,7 +131,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4970747682055762, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.42
+      value: -1.97
       objectReference: {fileID: 0}
     - target: {fileID: 4970747682055762, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
       propertyPath: m_LocalPosition.z
@@ -175,7 +175,7 @@ Prefab:
     - target: {fileID: 212268860143461308, guid: 4ed6348d90110f64a8844ec83e02b337,
         type: 2}
       propertyPath: m_SortingOrder
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4970747682055762, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
       propertyPath: m_LocalScale.x
@@ -198,6 +198,31 @@ Prefab:
         type: 2}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1355732002378236, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1409270524057130, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248852367580190, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248852367580190, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4248852367580190, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 50613148643856274, guid: 4ed6348d90110f64a8844ec83e02b337,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed6348d90110f64a8844ec83e02b337, type: 2}
@@ -395,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiles:
-  - {fileID: 1435869416582242, guid: 935195985531c4a1e8a85a02cb108421, type: 2}
+  - {fileID: 1354549028943144, guid: 1cdddaa1c616347b7bc2d3164311163c, type: 2}
   followingCamera: {fileID: 923364349}
   BackGroundObject: {fileID: 1008924542}
 --- !u!4 &1009529668
