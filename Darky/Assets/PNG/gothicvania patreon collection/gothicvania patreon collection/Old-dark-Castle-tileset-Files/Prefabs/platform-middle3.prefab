@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTiles:
-  - {fileID: 1527961271887418, guid: c80322605962d41e09a9e46763cec670, type: 2}
+  - {fileID: 1695754911783236, guid: f840b3483f39c4de4aec1499a16ff91e, type: 2}
   - {fileID: 1165094728928198, guid: a3f5d5b1653a24a9ebd77d42fed40ca9, type: 2}
   - {fileID: 1354549028943144}
   - {fileID: 1405114669626326, guid: ee74c2ecae8b2436cb95140d6ed04b76, type: 2}

@@ -156,6 +156,18 @@ Prefab:
       propertyPath: m_Name
       value: Hero
       objectReference: {fileID: 0}
+    - target: {fileID: 4938619452463824, guid: 8ecb94c082438499d983f429b1399a17, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938619452463824, guid: 8ecb94c082438499d983f429b1399a17, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938619452463824, guid: 8ecb94c082438499d983f429b1399a17, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecb94c082438499d983f429b1399a17, type: 2}
   m_IsPrefabAsset: 0

@@ -26,4 +26,9 @@ public class Score : MonoBehaviour
 		textBox.text = scoreInt.ToString();
 		
 	}
+
+	public void AddScore(int toAdd)
+	{
+		scoreInt += toAdd;
+	}
 }
