@@ -8,6 +8,9 @@ TagManager:
   - Monster
   - Score
   - Coin
+  - Hero
+  - Att_left_hitbox
+  - Shadow
   layers:
   - Default
   - TransparentFX

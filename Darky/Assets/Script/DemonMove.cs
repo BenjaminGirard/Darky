@@ -4,38 +4,104 @@ using UnityEngine;
 
 public class DemonMove : MonoBehaviour
 {
-
-	public GameObject player;
+    public float distAttack = 3f;
+    public float speed = 2f;
+	private GameObject player;
+    private GameObject hitBox_att_right;
 	private Animator anim;
+    private bool is_att = false;
 	
 	void Start () {
-		anim = GetComponent<Animator>();
+		player = GameObject.FindGameObjectWithTag("Hero");
+		hitBox_att_right = GameObject.FindGameObjectWithTag("Att_left_hitbox");
+
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+        anim = GetComponent<Animator>();
+	    
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!hitBox_att_right)
+			hitBox_att_right = GameObject.FindGameObjectWithTag("Att_left_hitbox");
+
 		float hori = Input.GetAxis("Horizontal");
 
 		movement(hori);
 		anim.SetFloat("Hori", hori);
-		//anim.SetBool("Att", Att);
-	}
+        //anim.SetBool("Att", Att);
+    }
 
-	void movement(float hori)
+    void movement(float hori)
 	{
+        Vector3 dist = player.transform.position - transform.position;
 
-		if (transform.position.x < player.transform.position.x)
+        
+
+        if (/*transform.position.x < player.transform.position.x && */dist.magnitude > distAttack)
 		{
-			transform.Translate(Vector2.right * 2f * Time.deltaTime);
-			transform.eulerAngles = new Vector2(0, 0);
+            desactiveHit();
+            anim.SetBool("Att", false);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+            BoxCollider2D[] tab = GetComponents<BoxCollider2D>();
+            foreach (BoxCollider2D b in tab)
+            {
+                b.offset = new Vector2(-0.17f, -0.09f);
+            }
+            transform.eulerAngles = new Vector2(0, 0);
 		}
+        else
+        {
+            anim.SetBool("Att", true);
+            GetComponent<BoxCollider2D>();
+            BoxCollider2D[] tab = GetComponents<BoxCollider2D>();
+            foreach (BoxCollider2D b in tab)
+            {
+                b.offset = new Vector2(0.217f, -0.332f);
+            }
+
+            print(AnimatorIsPlaying("Demon_attack"));
+
+            if (AnimatorIsPlaying("Demon_attack") > 0.9)
+            {
+                desactiveHit();
+            }
+            else if (AnimatorIsPlaying("Demon_attack") > 0.5)
+            {
+                hitBox_att_right.SetActive(true);
+            }
+            //StartCoroutine(activeHit(0.5f));
+
+
+        }
+
+        /*
 		else 
 		{
-			transform.Translate(Vector2.left * 2f * Time.deltaTime);
+			transform.Translate(Vector2.left * speed * Time.deltaTime);
 			transform.eulerAngles = new Vector2(0, 0);
 		}
-	}
+        */
+    }
 
+    IEnumerator activeHit(float time)
+    {
+        yield return new WaitForSeconds(time);
 
+            hitBox_att_right.SetActive(true);
 
+    }
+
+    void desactiveHit()
+    {
+            hitBox_att_right.SetActive(false);
+    }
+
+    float AnimatorIsPlaying(string stateName)
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(stateName))
+            return (anim.GetCurrentAnimatorStateInfo(0).normalizedTime % 1.0f);
+        return (0);
+    }
 }
