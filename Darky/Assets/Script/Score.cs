@@ -31,4 +31,7 @@ public class Score : MonoBehaviour
 	{
 		scoreInt += toAdd;
 	}
+	public int getScore() {
+		return scoreInt;
+	}
 }

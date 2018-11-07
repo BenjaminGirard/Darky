@@ -13,7 +13,7 @@ public class DemonMove : MonoBehaviour
 	
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Hero");
-		hitBox_att_right = GameObject.FindGameObjectWithTag("Att_left_hitbox");
+		hitBox_att_right = this.gameObject.transform.GetChild(0).gameObject;//GameObject.FindGameObjectWithTag("Att_monster");
 
         Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
         anim = GetComponent<Animator>();
@@ -22,8 +22,6 @@ public class DemonMove : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if (!hitBox_att_right)
-			hitBox_att_right = GameObject.FindGameObjectWithTag("Att_left_hitbox");
 
 		float hori = Input.GetAxis("Horizontal");
 

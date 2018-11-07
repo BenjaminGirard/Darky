@@ -102,8 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextTiles:
   - {fileID: 1402280329312044}
-  - {fileID: 1375788772693720, guid: d87944a71c3404c46a79ff0f77df1a27, type: 2}
-  - {fileID: 1547459102514756, guid: 56ab8ada5287e4e998d6c33f171a1539, type: 2}
+  - {fileID: 1842888210281764, guid: d446d89e54c21de48849998484e5b710, type: 2}
+  - {fileID: 1424275197580466, guid: 6f4cc67cecce32b44947bd380f4bd276, type: 2}
   - {fileID: 1696953274808544, guid: 7ebad27a9f743437182730980dc6c6f6, type: 2}
 --- !u!114 &114837811047337444
 MonoBehaviour:

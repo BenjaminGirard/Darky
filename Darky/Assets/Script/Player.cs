@@ -5,13 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public GameObject _shadow;
-
+    private GameObject[] _monsters;
+    private Vector3 heal = new Vector3(1, 1, 1);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("LightPotion"))
         {
-            _shadow.GetComponent<ShadowController>()._lightS.healLight(new Vector3(1, 1, 1));
+            _shadow.GetComponent<ShadowController>()._lightS.healLight(heal);
             Destroy(collision.gameObject);
         }
 
@@ -23,6 +24,13 @@ public class Player : MonoBehaviour {
             Destroy(collision.gameObject);
             
         }
-        
+        if (collision.CompareTag("ErasePotion")) {
+            _monsters = GameObject.FindGameObjectsWithTag("Monster");
+            foreach (GameObject monster in _monsters) {
+                _shadow.GetComponent<ShadowController>()._lightS.healLight(heal);
+                monster.GetComponent<Die>().setDie();
+            }
+            Destroy(collision.gameObject);
+        }
     }
 }

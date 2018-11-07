@@ -13,6 +13,11 @@ public class HandleHighScore : MonoBehaviour {
 	public GameObject button;
 	public GameObject input;
 	public GameObject panel;
+	public GameObject title;
+	public GameObject gameOver;
+	public GameObject backtomenu;
+	public GameObject replay;
+	public GameObject exit;
 	private string scores;
 	private string filename = "Assets/Resources/highScore.txt";
 	private Dictionary<string, int> scoreMap = new Dictionary<string, int>();
@@ -33,6 +38,8 @@ public class HandleHighScore : MonoBehaviour {
 			}
 		}
 		//Add new entry
+		if (scoreMap.ContainsKey(playerName.text))
+			scoreMap.Remove(playerName.text);
 		scoreMap.Add(playerName.text, PlayerPrefs.GetInt("highScore", 0));
 		//Sort Map
 		var tmp = from entry in scoreMap orderby entry.Value descending select entry;
@@ -44,11 +51,18 @@ public class HandleHighScore : MonoBehaviour {
 		//Dump string to file text
 		File.WriteAllText(filename, toWrite);
 		//UI shutting down buttun and inputfield and activate panel showing elements
+		gameOver.SetActive(false);
 		button.SetActive(false);
 		input.SetActive(false);
+		title.SetActive(true);
+		backtomenu.SetActive(true);
+		replay.SetActive(true);
+		exit.SetActive(true);
 		panel.SetActive(true);
 		//Read the highscore text document and give im to the right Text GameObject
 		string text = string.Join("\r\n", File.ReadAllLines(filename)).Replace(':', '\t');
 		highScoreTextShowOnScreen.text = text;
+		PlayerPrefs.SetInt("highScore", 0);
+        PlayerPrefs.Save();
 	}
 }

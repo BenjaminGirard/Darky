@@ -29,7 +29,7 @@ public class TilesGeneration : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        Random.seed = System.DateTime.Now.Millisecond;
         nextPositionBackGround = (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x;
         nextPositionTile = -10;
         gap = 0;

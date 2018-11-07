@@ -8,6 +8,9 @@ public class LightSystem {
     private float MaxLightScale;
     private float MinLightScale;
 
+    public float getMinLightScale() {
+        return MinLightScale;
+    }
     public LightSystem(Vector3 light)
     {
         MaxLightScale = light.x;

@@ -11,6 +11,8 @@ TagManager:
   - Hero
   - Att_left_hitbox
   - Shadow
+  - ErasePotion
+  - Att_monster
   layers:
   - Default
   - TransparentFX
