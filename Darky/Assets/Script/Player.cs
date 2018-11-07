@@ -8,6 +8,8 @@ public class Player : MonoBehaviour {
     private GameObject[] _monsters;
     private Vector3 heal = new Vector3(1, 1, 1);
 
+    public bool touched = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("LightPotion"))

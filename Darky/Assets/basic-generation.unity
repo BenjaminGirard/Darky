@@ -380,12 +380,12 @@ Prefab:
     - target: {fileID: 224672191419689850, guid: 9fb574028f72e435e9995a555e21a04f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 253.2
       objectReference: {fileID: 0}
     - target: {fileID: 224672191419689850, guid: 9fb574028f72e435e9995a555e21a04f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 30
+      value: 85.9
       objectReference: {fileID: 0}
     - target: {fileID: 224672191419689850, guid: 9fb574028f72e435e9995a555e21a04f,
         type: 2}
@@ -420,6 +420,16 @@ Prefab:
     - target: {fileID: 1602554007198402, guid: 9fb574028f72e435e9995a555e21a04f, type: 2}
       propertyPath: m_TagString
       value: Score
+      objectReference: {fileID: 0}
+    - target: {fileID: 114767313960245202, guid: 9fb574028f72e435e9995a555e21a04f,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114767313960245202, guid: 9fb574028f72e435e9995a555e21a04f,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb574028f72e435e9995a555e21a04f, type: 2}
@@ -912,6 +922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shadow: {fileID: 1014579122}
+  touched: 0
 --- !u!61 &1208878819
 BoxCollider2D:
   m_ObjectHideFlags: 0

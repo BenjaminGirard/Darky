@@ -15,8 +15,27 @@ public class DamageHitBoxController : MonoBehaviour {
     {
         if (collision.CompareTag("Hero"))
         {
+            BlinkPlayer();
             shadow.GetComponent<ShadowController>().DamageLight();
         }
     }
+
+    void BlinkPlayer() {
+        Renderer r = GameObject.FindGameObjectWithTag("Hero").GetComponent<Renderer>();
+        StartCoroutine(DoBlinks(r));
+        if (!r.enabled)
+            r.enabled = true;
+    }
+    
+        IEnumerator DoBlinks(Renderer r) {
+        
+        r.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+        r.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+        r.enabled = false;
+        yield return new WaitForSeconds(0.2f);
+        r.enabled = true;
+     }
 }
 

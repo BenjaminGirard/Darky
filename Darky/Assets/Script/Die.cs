@@ -23,6 +23,11 @@ public class Die : MonoBehaviour {
     public void setDie()
     {
         anim.SetBool("Die", true);
+        Rigidbody2D[] tab = this.transform.gameObject.GetComponents<Rigidbody2D>();
+        foreach(Rigidbody2D b in tab)
+        {
+            b.simulated = false;
+        }
         StartCoroutine(Destroyz());
     }
 
@@ -30,8 +35,10 @@ public class Die : MonoBehaviour {
     {
         yield return new WaitForSeconds(time);
 
-        shadow.GetComponent<ShadowController>()._lightS.healLight(new Vector3(1f, 1f, 1f));
+        shadow.GetComponent<ShadowController>()._lightS.healLight(new Vector3(0.7f, 0.7f, 0.7f));
         GameObject.Destroy(this.transform.gameObject);
 
     }
+
+    
 }

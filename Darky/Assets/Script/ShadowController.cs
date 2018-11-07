@@ -26,6 +26,6 @@ public class ShadowController : MonoBehaviour {
 
     public void DamageLight()
     {
-        _lightS.damageLight(new Vector3(0.2f, 0.2f, 0.2f));
+        _lightS.damageLight(new Vector3(0.4f, 0.4f, 0.4f));
     }
 }

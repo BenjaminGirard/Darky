@@ -15,6 +15,8 @@ public class TilesGeneration : MonoBehaviour {
     private float nextPositionTile;
     private float gap;
 
+    private float sizeTile;
+
     private GameObject lastGenerated;
 
     GameObject nextObject(GameObject lastObject)
@@ -29,7 +31,8 @@ public class TilesGeneration : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Random.seed = System.DateTime.Now.Millisecond;
+        sizeTile = 1.28f;
+        Random.InitState(System.DateTime.Now.Millisecond);
         nextPositionBackGround = (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x;
         nextPositionTile = -10;
         gap = 0;
@@ -62,9 +65,8 @@ public class TilesGeneration : MonoBehaviour {
             nextPositionBackGround += (float)BackGroundObject.GetComponent<SpriteRenderer>().bounds.size.x;
         }
 
-        GameObject toGenerate = nextObject(lastGenerated);
-
-        if (p.x > nextPositionTile - (toGenerate.GetComponent<SpriteRenderer>().bounds.size.x + gap)) {
+        if (p.x > nextPositionTile - (sizeTile)) {
+            GameObject toGenerate = nextObject(lastGenerated);
 
             Instantiate(toGenerate, new Vector3(nextPositionTile - toGenerate.transform.position.z, toGenerate.transform.position.y,
                                                toGenerate.transform.position.z), Quaternion.identity);

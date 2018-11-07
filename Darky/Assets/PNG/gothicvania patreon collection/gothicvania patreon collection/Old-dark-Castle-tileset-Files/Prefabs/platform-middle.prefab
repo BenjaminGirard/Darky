@@ -176,11 +176,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextTiles:
-  - {fileID: 1695754911783236}
-  - {fileID: 1165094728928198, guid: a3f5d5b1653a24a9ebd77d42fed40ca9, type: 2}
+  - {fileID: 1405114669626326, guid: ee74c2ecae8b2436cb95140d6ed04b76, type: 2}
+  - {fileID: 1405114669626326, guid: ee74c2ecae8b2436cb95140d6ed04b76, type: 2}
   - {fileID: 1354549028943144, guid: 1cdddaa1c616347b7bc2d3164311163c, type: 2}
   - {fileID: 1029011865318472, guid: 02fd42f8cb3824742afb0660c0d58c95, type: 2}
-  - {fileID: 1405114669626326, guid: ee74c2ecae8b2436cb95140d6ed04b76, type: 2}
+  - {fileID: 1695754911783236}
 --- !u!114 &114894391209467590
 MonoBehaviour:
   m_ObjectHideFlags: 1

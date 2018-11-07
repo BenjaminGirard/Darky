@@ -102,9 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextTiles:
   - {fileID: 1402280329312044}
-  - {fileID: 1842888210281764, guid: d446d89e54c21de48849998484e5b710, type: 2}
-  - {fileID: 1424275197580466, guid: 6f4cc67cecce32b44947bd380f4bd276, type: 2}
   - {fileID: 1696953274808544, guid: 7ebad27a9f743437182730980dc6c6f6, type: 2}
+  - {fileID: 1424275197580466, guid: 6f4cc67cecce32b44947bd380f4bd276, type: 2}
+  - {fileID: 1842888210281764, guid: d446d89e54c21de48849998484e5b710, type: 2}
 --- !u!114 &114837811047337444
 MonoBehaviour:
   m_ObjectHideFlags: 1
